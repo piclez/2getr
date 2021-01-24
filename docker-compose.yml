@@ -1,0 +1,27 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: twogetr/twogetr-app:development
+    command: bash -c "rm -f /tmp/server.pid && bundle exec rails server -b 0.0.0.0 -P /tmp/server.pid"
+    environment:
+      DATABASE_URL: postgres://postgres:passcode@db
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+    volumes:
+      - .:/app:cached
+    tty: true
+    stdin_open: true
+
+  db:
+    image: postgres:13.1-alpine
+    ports:
+      - 5432:5432
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=passcode
