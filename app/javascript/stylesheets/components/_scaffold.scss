@@ -1,0 +1,9 @@
+a { @apply text-black; }
+a:visited { @apply text-gray-600; }
+a:hover { @apply text-white bg-black; }
+
+.field_with_errors > label { @apply underline font-bold text-red-700; }
+#error_explanation h2 { @apply mt-4 bg-red-600 text-white font-bold rounded-t px-4 py-2; }
+#error_explanation ul { @apply mb-4 border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700; }
+
+label { @apply block; }

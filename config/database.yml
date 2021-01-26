@@ -15,5 +15,5 @@ test:
 production:
   <<: *default
   database: twogetr_production
-  username: railsrox
+  username: twogetr
   password: <%= ENV['DATABASE_PASSWORD'] %>
