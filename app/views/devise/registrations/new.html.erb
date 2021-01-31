@@ -10,6 +10,18 @@
       <%= f.email_field :email, autocomplete: "email", class:"input" %>
     </div>
 
+    <%= f.fields_for :profile do |p| %>
+      <div class="input-group">
+        <%= p.label :first_name, class:"label" %>
+        <%= p.text_field :first_name, autocomplete: "first-name", class:"input" %>
+      </div>
+
+      <div class="input-group">
+        <%= p.label :last_name, class:"label" %>
+        <%= p.text_field :last_name, autocomplete: "last-name", class:"input" %>
+      </div>
+    <% end %>
+
     <div class="input-group">
       <div class="flex">
         <%= f.label :password, class: "label" %>
