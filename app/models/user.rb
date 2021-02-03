@@ -10,4 +10,6 @@ class User < ApplicationRecord
   after_initialize do
     build_profile if new_record? && profile.blank?
   end
+
+  delegate :name, to: :profile, allow_nil: true
 end

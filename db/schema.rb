@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2021_01_31_020545) do
     t.string "city"
     t.string "state"
     t.string "country"
+    t.text "bio"
     t.boolean "admin"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
